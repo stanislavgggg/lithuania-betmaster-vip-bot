@@ -1,0 +1,44 @@
+{
+  "vip": {
+    "name": "LT VIP",
+    "min_deposit": "30 €",
+    "free_days": 0
+  },
+  "brands": {
+    "partner1": {
+      "name": "PARTNER_1",
+      "min_deposit": "30 €",
+      "link": "REPLACE_ME",
+      "subid_param": "sub1",
+      "note": ""
+    },
+    "partner2": {
+      "name": "PARTNER_2",
+      "min_deposit": "30 €",
+      "link": "REPLACE_ME",
+      "subid_param": "sub1",
+      "note": ""
+    },
+    "partner3": {
+      "name": "PARTNER_3",
+      "min_deposit": "30 €",
+      "link": "REPLACE_ME",
+      "subid_param": "sub1",
+      "note": ""
+    }
+  },
+  "regions": [
+    {
+      "code": "lt",
+      "title": "Lietuva",
+      "emoji": "🇱🇹",
+      "brands": ["partner1", "partner2", "partner3"]
+    },
+    {
+      "code": "other",
+      "title": "Kita šalis",
+      "emoji": "🌍",
+      "brands": ["partner1", "partner2", "partner3"]
+    }
+  ]
+}
