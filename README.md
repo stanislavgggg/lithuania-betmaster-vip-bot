@@ -13,7 +13,7 @@ Telegram bot gating a private VIP channel behind a partner registration + deposi
 
 Lithuanian fork of the BetCroatia VIP bot. User-facing copy is Lithuanian (`texts.py`, `keyboards.py`, informal "tu" voice); the admin panel stays English. Logic, DB schema and admin commands are unchanged.
 
-**The bot refuses to start while any brand link in `brands.json` is still `REPLACE_ME`** — fill in partner names, LT tracking links and the minimum deposit first.
+Brands whose link in `brands.json` is still `REPLACE_ME` are **skipped with a warning in the logs**, and a country with no live brands is hidden. The bot still starts, so `/id` and admin commands work during setup. Fill in partner names, LT tracking links and the minimum deposit before sending traffic, then `/reload`.
 
 ## What's in the box
 

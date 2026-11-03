@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import logging
 import os
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -11,6 +12,8 @@ from urllib.parse import urlencode
 from dotenv import load_dotenv
 
 load_dotenv()
+
+log = logging.getLogger("catalog")
 
 
 def _int_list(raw: str) -> list[int]:
@@ -123,11 +126,13 @@ class Catalog:
                 if base is None:
                     raise ValueError(f"Region '{entry['code']}' references unknown brand '{code}'")
                 merged = {**base, **override}
-                if "REPLACE_ME" in merged.get("link", "") or not merged.get("link", "").startswith("http"):
-                    raise ValueError(
-                        f"Brand '{code}' in region '{entry['code']}' has no real tracking link yet "
-                        f"(link = {merged.get('link')!r}). Fill it in brands.json."
-                    )
+                link = merged.get("link", "")
+                if "REPLACE_ME" in link or not link.startswith("http"):
+                    # Skip unfinished brands instead of crashing, so the bot can still
+                    # run during setup (/id, admin commands). Users never see them.
+                    log.warning("Skipping brand '%s' in region '%s': no real tracking link (%r)",
+                                code, entry["code"], link)
+                    continue
                 brands[code] = Brand(
                     code=code,
                     name=merged["name"],
@@ -136,6 +141,9 @@ class Catalog:
                     subid_param=merged.get("subid_param", "sub1"),
                     note=merged.get("note", ""),
                 )
+            if not brands:
+                log.warning("Hiding region '%s': no brands with real links yet", entry["code"])
+                continue
             regions[entry["code"]] = Region(
                 code=entry["code"],
                 title=entry["title"],
@@ -147,6 +155,8 @@ class Catalog:
         self.min_deposit = vip.get("min_deposit", "")
         self.free_days = int(vip.get("free_days", 30))
         self.regions = regions
+        if not regions:
+            log.warning("No live brands in %s — users will see no partners until links are filled in", self.path)
 
     def region(self, code: str) -> Region | None:
         return self.regions.get(code)
