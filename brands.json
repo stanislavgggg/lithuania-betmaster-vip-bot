@@ -1,29 +1,36 @@
 {
   "vip": {
-    "name": "LT VIP",
-    "min_deposit": "30 €",
+    "name": "Mūsų Statymai Matas",
+    "min_deposit": "40-50€",
     "free_days": 0
   },
   "brands": {
-    "partner1": {
-      "name": "PARTNER_1",
-      "min_deposit": "30 €",
-      "link": "REPLACE_ME",
-      "subid_param": "sub1",
+    "spinhub": {
+      "name": "SpinHub",
+      "min_deposit": "40 €",
+      "link": "https://on.spinhub100.com/promoRedirect?key=ej0xMzUyNTU2NCZsPTEzNTI1MDA3JnA9NjI3NA%3D%3D",
+      "subid_param": "",
       "note": ""
     },
-    "partner2": {
-      "name": "PARTNER_2",
-      "min_deposit": "30 €",
-      "link": "REPLACE_ME",
-      "subid_param": "sub1",
+    "spartibet": {
+      "name": "Spartibet",
+      "min_deposit": "40 €",
+      "link": "https://record.joinaff.com/_92b-kwHV8w0goRATMhMT4mNd7ZgqdRLk/363/?pg=0",
+      "subid_param": "",
       "note": ""
     },
-    "partner3": {
-      "name": "PARTNER_3",
-      "min_deposit": "30 €",
-      "link": "REPLACE_ME",
-      "subid_param": "sub1",
+    "voxcasino": {
+      "name": "VoxCasino",
+      "min_deposit": "40 €",
+      "link": "https://winahoralabs.com/l/6a1ea36251d376b03f0969d2?sub_id=LGmt",
+      "subid_param": "",
+      "note": ""
+    },
+    "ggbet": {
+      "name": "GGBet",
+      "min_deposit": "40 €",
+      "link": "https://lazybuguru.lt/mt/gg.bet/",
+      "subid_param": "",
       "note": ""
     }
   },
@@ -32,13 +39,13 @@
       "code": "lt",
       "title": "Lietuva",
       "emoji": "🇱🇹",
-      "brands": ["partner1", "partner2", "partner3"]
+      "brands": ["spinhub", "spartibet", "voxcasino", "ggbet"]
     },
     {
       "code": "other",
       "title": "Kita šalis",
       "emoji": "🌍",
-      "brands": ["partner1", "partner2", "partner3"]
+      "brands": ["spinhub", "spartibet", "voxcasino", "ggbet"]
     }
   ]
 }

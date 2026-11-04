@@ -39,9 +39,9 @@ def brands_kb(region: Region) -> InlineKeyboardMarkup:
     if len(region.brands) % 2:
         widths.append(1)
     if len(region.brands) > 1:
-        kb.button(text="🌍 Užsiregistravau visuose", callback_data=f"brand:{region.code}:{ALL_BRANDS}")
+        kb.button(text="🌍 Jau esu užsiregistravęs pas visus", callback_data=f"brand:{region.code}:{ALL_BRANDS}")
         widths.append(1)
-    kb.button(text="⬅️ Keisti šalį", callback_data="nav:regions")
+    kb.button(text="⬅️ Pakeisti šalį", callback_data="nav:regions")
     widths.append(1)
     kb.adjust(*widths)
     return kb.as_markup()
@@ -50,7 +50,7 @@ def brands_kb(region: Region) -> InlineKeyboardMarkup:
 def brand_card_kb(url: str) -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(
         inline_keyboard=[
-            [InlineKeyboardButton(text="▶️ Registruokis ir įnešk", url=url)],
+            [InlineKeyboardButton(text="▶️ Registruotis ir įmokėti", url=url)],
             [InlineKeyboardButton(text="⬅️ Kiti partneriai", callback_data="nav:regions")],
         ]
     )
