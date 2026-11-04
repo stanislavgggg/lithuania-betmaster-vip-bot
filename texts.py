@@ -11,10 +11,12 @@ CHOOSE_REGION = "<b>Pasirinkite savo šalį:</b>"
 
 REGION_SELECTED = (
     "Norėdami <b>NEMOKAMAI</b> prisijungti prie <b>Mūsų Statymai Matas VIP kanalo</b>, "
-    "užsiregistruokite pas vieną iš žemiau pateiktų partnerių ir atlikite bent "
-    "<b>{min_deposit}</b> įmoką. Už prieigą prie VIP kanalo <b>papildomai mokėti nereikia</b>.\n\n"
-    "👇 <b>Pasirinkite partnerį, pas kurį norite užsiregistruoti, ir gaukite "
-    "nemokamą VIP prieigą:</b>"
+    "užsiregistruokite pas vieną iš žemiau pateiktų partnerių ir atlikite <b>40–50 €</b> įmoką, "
+    "priklausomai nuo pasirinkto partnerio. Už prieigą prie VIP kanalo "
+    "<b>papildomai mokėti nereikia</b>.\n\n"
+    "Partnerius atrinkome tam, kad jų pasiūloje galėtumėte rasti ir atlikti tuos pačius "
+    "statymus, kuriais Matas dalijasi VIP kanale.\n\n"
+    "👇 <b>Pasirinkite partnerį, užsiregistruokite ir gaukite VIP prieigą:</b>"
 )
 
 BRAND_CARD = (
