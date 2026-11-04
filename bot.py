@@ -316,12 +316,12 @@ async def cb_brand_selected(call: CallbackQuery) -> None:
     user_id = call.from_user.id
 
     if brand_code == kb.ALL_BRANDS:
-        opened: list[str] = []
-        for code in region.brands:
-            if await open_request(call.message, region_code, code, user_id, source):
-                opened.append(region.brands[code].name)
-        if opened:
-            await call.message.answer(t.ALL_BRANDS_STARTED.format(brands=", ".join(opened)))
+        # Already registered everywhere: point them to support for extra partners.
+        if settings.support_username:
+            msg = t.ALL_BRANDS_SUPPORT.format(contact=f"@{settings.support_username}")
+        else:
+            msg = t.ALL_BRANDS_SUPPORT_HERE
+        await call.message.answer(msg, reply_markup=kb.brands_kb(region))
         return
 
     if brand_code not in region.brands:

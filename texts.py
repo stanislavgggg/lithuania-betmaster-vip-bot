@@ -38,6 +38,17 @@ ALL_BRANDS_STARTED = (
     "Siųskite ekrano nuotraukas po vieną — kiekvieną priskirsime kitam partneriui eilėje."
 )
 
+ALL_BRANDS_SUPPORT = (
+    "💬 Dėl papildomų partnerių nuorodų ar pasiūlymų susisiekite {contact}."
+)
+
+# Used when SUPPORT_USERNAME is empty: the bot itself is the support line —
+# messages are relayed to the admin chat and admins reply from there.
+ALL_BRANDS_SUPPORT_HERE = (
+    "💬 Dėl papildomų partnerių nuorodų ar pasiūlymų parašykite mums čia, šiame pokalbyje — "
+    "jūsų žinutę gaus mūsų komanda ir atsakys."
+)
+
 ALREADY_REQUESTED = (
     "ℹ️ Jau turite atidarytą užklausą dėl <b>{brand}</b>. "
     "Atsiųskite ekrano nuotrauką arba spauskite ❌ Atšaukti užklausas ir pradėkite iš naujo."
