@@ -25,13 +25,16 @@ def _int_list(raw: str) -> list[int]:
     return out
 
 
+DEFAULT_VIP_INVITE_LINK = "https://t.me/+S6_QD8wEH3llYzVk"
+
+
 @dataclass(frozen=True)
 class Settings:
     bot_token: str
     admin_ids: list[int]
     admin_chat_ids: list[int]   # chats where requests land for review (group and/or admin DMs)
     vip_chat_id: int            # the VIP channel/group users get invited to
-    vip_invite_link: str        # static fallback link used if the API call fails
+    vip_invite_link: str        # VIP channel link sent after an approved screenshot
     db_path: str
     brands_file: Path
     support_username: str
@@ -56,7 +59,9 @@ class Settings:
             admin_ids=admin_ids,
             admin_chat_ids=admin_chat_ids,
             vip_chat_id=int(vip_chat),
-            vip_invite_link=os.getenv("VIP_INVITE_LINK", "").strip(),
+            # Mūsų Statymai Matas VIP channel. Overridable via the VIP_INVITE_LINK env var.
+            vip_invite_link=(os.getenv("VIP_INVITE_LINK", "").strip()
+                             or DEFAULT_VIP_INVITE_LINK),
             db_path=os.getenv("DB_PATH", "bot.db"),
             brands_file=Path(os.getenv("BRANDS_FILE", "brands.json")),
             support_username=os.getenv("SUPPORT_USERNAME", "").lstrip("@"),

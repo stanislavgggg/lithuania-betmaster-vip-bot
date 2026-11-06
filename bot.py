@@ -109,7 +109,15 @@ async def safe_send(bot: Bot, chat_id: int, text: str, **kwargs) -> Message | No
 
 
 async def make_invite(bot: Bot, name: str) -> str | None:
-    """Personal one-time link; falls back to the static VIP_INVITE_LINK if the API refuses."""
+    """Link to the Mūsų Statymai Matas VIP channel.
+
+    The static VIP_INVITE_LINK always wins: VIP_CHAT_ID still points at the old
+    BetCroatia channel, so generating a personal link from it would invite
+    Lithuanian users into the wrong channel. The API path is only a fallback
+    if no static link is configured.
+    """
+    if settings.vip_invite_link:
+        return settings.vip_invite_link
     try:
         link = await bot.create_chat_invite_link(
             settings.vip_chat_id,
@@ -119,8 +127,8 @@ async def make_invite(bot: Bot, name: str) -> str | None:
         )
         return link.invite_link
     except TelegramAPIError as exc:
-        log.error("Invite link '%s' failed: %s — falling back to the static link", name, exc)
-    return settings.vip_invite_link or None
+        log.error("Invite link '%s' failed: %s", name, exc)
+    return None
 
 
 async def render_request_caption(request: store.Request) -> str:

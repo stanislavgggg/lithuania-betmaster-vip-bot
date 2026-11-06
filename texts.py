@@ -79,14 +79,14 @@ NO_PENDING_FOR_PHOTO = (
 
 APPROVED_USER = (
     "✅ <b>Patvirtinta!</b> Jūsų įmoka pas <b>{brand}</b> patvirtinta.\n\n"
-    "Štai jūsų asmeninė nuoroda į {vip_name} VIP kanalą (galioja 24 valandas, vienkartinė):\n"
+    "Štai nuoroda į {vip_name} VIP kanalą:\n"
     "{invite}\n\n"
     "Laukiame jūsų kanale! 🎉"
 )
 
 APPROVED_USER_UNTIL = (
     "✅ <b>Patvirtinta!</b> Jūsų įmoka pas <b>{brand}</b> patvirtinta.\n\n"
-    "Štai jūsų asmeninė nuoroda į {vip_name} VIP kanalą (galioja 24 valandas, vienkartinė):\n"
+    "Štai nuoroda į {vip_name} VIP kanalą:\n"
     "{invite}\n\n"
     "Jūsų prieiga galioja iki <b>{until}</b>."
 )
