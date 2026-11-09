@@ -15,7 +15,7 @@ REGION_SELECTED = (
     "priklausomai nuo pasirinkto partnerio. Už prieigą prie VIP kanalo "
     "<b>papildomai mokėti nereikia</b>.\n\n"
     "Partnerius atrinkome tam, kad jų pasiūloje galėtumėte rasti ir atlikti tuos pačius "
-    "statymus, kuriais Matas dalijasi VIP kanale.\n\n"
+    "statymus, kuriais aš dalinuosi VIP kanale.\n\n"
     "👇 <b>Pasirinkite partnerį, užsiregistruokite ir gaukite VIP prieigą:</b>"
 )
 
